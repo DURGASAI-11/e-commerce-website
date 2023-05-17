@@ -1,0 +1,30 @@
+extends base
+
+block content
+
+    main.main
+        table(border='1')
+            thead
+                 tr#heads
+                    th Date
+                    th User Name 
+                    th Product Name
+                    th Price
+                    th Email ID
+                    th Phone Number
+                    th address
+                    th Details 
+            tbody
+                each booking in bookings
+                    tr#heads
+                        td#pad= booking.createdAt.toLocaleDateString()
+                        td#pad= booking.userName
+                        td#pad= booking.productName
+                        td#pad=`₹${booking.price}`
+                        td#pad= booking.email
+                        td#pad= booking.phone
+                        td#pad= booking.address
+                        td#pad
+                            a.btn.btn--green.details(href='/all-bookings') Order Booked
+
+

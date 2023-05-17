@@ -1,0 +1,27 @@
+extends base
+
+block content
+
+    main.main
+        table(border='1')
+            thead
+                 tr#heads
+                    th Date
+                    th Product Name
+                    th Price
+                    th Update Product
+                    th Delete Product
+            tbody
+                each product in products
+                    tr#heads
+                        td#pad=product.createdAt.toLocaleDateString()
+                        td#pad= product.name
+                        td#pad=` ₹ ${product.price}`
+                        td#pad
+                            a.btn.btn--green#greenbtn.update-product(href=`/product-update/${product.slug}` data-product-id=`${product.id}`) Update
+                        td#pad
+                            button.btn.btn--green#redbtn.delete-product(data-product-id=`${product.id}`) Delete 
+        br
+        a.btn#bluebtn.Add-product(href=`/product-add`) Add
+
+

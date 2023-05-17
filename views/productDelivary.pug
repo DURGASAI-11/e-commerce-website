@@ -1,0 +1,11 @@
+extends base 
+
+block content
+
+    main.main
+    .error
+        .error__title
+            h2.heading-secondary1.heading-secondary--error1 Thank you for your order!.you can expect to receive it within 3-4 working days.we hope you enjoy your purchase!
+            h2.error__emoji 
+        img.form__imageCover(src=`/img/delivery.jpg`,id="emailImg", alt='product-cover-image')
+        .error__msg= msg

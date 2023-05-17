@@ -1,0 +1,24 @@
+extends base
+
+block content
+
+    main.main
+        table(border='1')
+            thead
+                 tr#heads
+                    th Date
+                    th Username
+                    th Email ID
+                    th Phone Number
+                    th Delete 
+            tbody
+                each user in users
+                    tr#heads
+                        td#pad=user.createdAt.toLocaleDateString()
+                        td#pad= user.name
+                        td#pad= user.email
+                        td#pad= user.phone
+                        td#pad
+                            button.btn.btn--green.delete-user(data-user-id=`${user.id}`) Delete
+
+

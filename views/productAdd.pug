@@ -1,0 +1,53 @@
+extend base 
+
+
+block content 
+
+    main.main
+            .user-view__content
+                .user-view__form-container
+                    h2.heading-secondary.ma-bt-md Add a new Product
+
+                    //Without API
+                    //- form.form.form-user-data(action='/submit-user-data' method='POST' enctype='multipart/form-data')
+
+                    //- WITH API
+                    form.form.form-product-data
+                        .form__group
+                            label.form__label(for='name') Product Name
+                            input#newProductName.form__input(type='text', required, name='name' placeholder='Rice')
+                        .form__group.ma-bt-md
+                            label.form__label(for='price') Price
+                            input#newProductPrice.form__input(type='number', required, name='price' placeholder='100' )
+                        .form__group.ma-bt-md
+                            label.form__label(for='unit') Unit
+                            input#newProductUnit.form__input(type='text', required, name='unit' placeholder='1 kg or 1 bottle or 1 liter ...')
+                        .form__group.ma-bt-md
+                            label.form__label(for='summary') Summary
+                            input#newProductSummary.form__input(type='text', required, name='summary' placeholder='Organic Rice')
+                        .form__group.ma-bt-md
+                            label.form__label(for='slug') Slug
+                            input#newProductSlug.form__input(type='text', required, name='slug' placeholder='rice')
+                        .form__group.ma-bt-md
+                            label.form__label(for='description') description
+                            input#newProductDescription.form__input(type='text', required, name='description')
+                        .form__group.form__photo-upload
+                            img.form__imageCover(src=`/img/products/default.jpg`, alt='product-cover-image')
+                            input.form__upload(type='file',accept='image/*',id='imageCover',name='imageCover')
+                            label(for='imageCover') imageCover
+                        .form__group.form__photo-upload
+                            img.form__image0(src=`/img/products/default.jpg`, alt='image0')
+                            input.form__upload(type='file',accept='image/*',id='photo1',name='images' )
+                            label(for='photo1') Choose image0
+                        .form__group.form__photo-upload
+                            img.form__image1(src=`/img/products/default.jpg`, alt='image1')
+                            input.form__upload(type='file',accept='image/*',id='photo2',name='images' )
+                            label(for='photo2') Choose image1
+                        br
+                        .form__group.form__photo-upload
+                            img.form__image2(src=`/img/products/default.jpg`, alt='image2')
+                            input.form__upload(type='file',accept='image/*',id='photo3',name='images' )
+                            label(for='photo3') Choose image2
+                        .form__group.right
+                            button.btn.btn--small.btn--green#btn-add-product Add Product
+

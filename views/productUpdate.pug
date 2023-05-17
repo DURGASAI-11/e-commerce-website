@@ -1,0 +1,48 @@
+extend base 
+
+
+block content 
+
+    main.main
+            .user-view__content
+                .user-view__form-container
+                    h2.heading-secondary.ma-bt-md Update this product
+                    form.form.form-product-data
+                        .form__group
+                            label.form__label(for='name') Product Name
+                            input#updateProductName.form__input(type='text',value=`${product.name}`,required, name='name')
+                        .form__group.ma-bt-md
+                            label.form__label(for='price') Price
+                            input#updateProductPrice.form__input(type='number',value=`${product.price}`, required, name='price'  )
+                        .form__group.ma-bt-md
+                            label.form__label(for='unit') Unit
+                            input#updateProductUnit.form__input(type='text',value=`${product.unit}`, required, name='unit'  )
+                        .form__group.ma-bt-md
+                            label.form__label(for='summary') Summary
+                            input#updateProductSummary.form__input(type='text',value=`${product.summary}` ,required, name='summary' )
+                        .form__group.ma-bt-md
+                            label.form__label(for='slug') Slug
+                            input#updateProductSlug.form__input(type='text', value=`${product.slug}`,required, name='slug' )
+                        .form__group.ma-bt-md
+                            label.form__label(for='description') description
+                            input#updateProductDescription.form__input(type='text', value=`${product.description}`,required, name='description')
+                        .form__group.form__photo-upload
+                            img.form__imageCover(src=`/img/products/${product.imageCover}`, alt='product-cover-image')
+                            input.form__upload(type='file',accept='image/*',id='imageCoverUpdate',name='imageCover')
+                            label(for='imageCoverUpdate') imageCover
+                        .form__group.form__photo-upload
+                            img.form__image0(src=`/img/products/${product.images[0]}`, alt='image0')
+                            input.form__upload(type='file',accept='image/*',id='photo1Update',name='images' )
+                            label(for='photo1Update') Choose image0
+                        .form__group.form__photo-upload
+                            img.form__image1(src=`/img/products/${product.images[1]}`, alt='image1')
+                            input.form__upload(type='file',accept='image/*',id='photo2Update',name='images' )
+                            label(for='photo2Update') Choose image1
+                        br
+                        .form__group.form__photo-upload
+                            img.form__image2(src=`/img/products/${product.images[2]}`, alt='image2')
+                            input.form__upload(type='file',accept='image/*',id='photo3Update',name='images' )
+                            label(for='photo3Update') Choose image2
+                        .form__group.right
+                            button.btn.btn--small.btn--green#btn-update-product(data-product-id=`${product.id}`) Update Product
+

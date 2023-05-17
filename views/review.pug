@@ -1,0 +1,16 @@
+extends base
+
+block content
+
+    main.main
+        .review-form
+            h2.heading-secondary.ma-bt-lg Please review the product
+            form.form.form--review
+                .form__group
+                    label.form__label(for='review') Review
+                    input#review-text.form__input(type='text', placeholder='pretty good', required)
+                .form__group.ma-bt-md
+                    label.form__label(for='review-stars') Rating
+                    input#review-stars.form__input(type='number', placeholder='4', required, maxlength='1')
+                .form__group
+                    button.btn.btn--green.btn--processing#review-product(data-product-id=`${product.id}`) submit
